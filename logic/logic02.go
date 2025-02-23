@@ -1,10 +1,5 @@
 package logic
 
-import (
-	printer "github.com/achmad-aditiansah/slice-printer"
-)
-
-
 func DynamicSlice(row, col int) [][]int {
 
 	cell := make([][]int, row)
@@ -14,7 +9,7 @@ func DynamicSlice(row, col int) [][]int {
 	return cell
 }
 
-func Logic2Pola1 (n int) {
+func Logic2Pola1(n int) [][]int {
 	matrix := DynamicSlice(n, n)
 
 	num := 1
@@ -25,10 +20,10 @@ func Logic2Pola1 (n int) {
 		}
 		num += 2
 	}
-	printer.PrintSlice2D(matrix)
+	return matrix
 }
 
-func Logic2Pola2 (n int) {
+func Logic2Pola2(n int) [][]int {
 	matrix := DynamicSlice(n, n)
 
 	num := 2
@@ -39,10 +34,10 @@ func Logic2Pola2 (n int) {
 		}
 		num += 2
 	}
-	printer.PrintSlice2D(matrix)
+	return matrix
 }
 
-func Logic2Pola3 (n int) {
+func Logic2Pola3(n int) [][]int {
 	matrix := DynamicSlice(n, n)
 
 	num := 1
@@ -53,13 +48,13 @@ func Logic2Pola3 (n int) {
 			num += 2
 		}
 	}
-	printer.PrintSlice2D(matrix)
+	return matrix
 }
 
-func Logic2Pola4 (n int) {
+func Logic2Pola4(n int) [][]int {
 	matrix := DynamicSlice(n, n)
-	
-	num := 1 
+
+	num := 1
 
 	for i := 0; i < n; i++ {
 		for j := 0; j < n; j++ {
@@ -67,34 +62,34 @@ func Logic2Pola4 (n int) {
 			num += 3
 		}
 	}
-	printer.PrintSlice2D(matrix)
+	return matrix
 }
 
-func Logic2Pola5 (n int) {
+func Logic2Pola5(n int) [][]int {
 	matrix := DynamicSlice(n, n)
 
 	num := 1
 
 	for i := 0; i < n; i++ {
 		for j := 0; j < n; j++ {
-			if i % 2 == 0 {
+			if i%2 == 0 {
 				matrix[i][j] = num
 			} else {
 				matrix[i][n-1-j] = num
 			}
-			num += 2	
+			num += 2
 		}
 	}
-	printer.PrintSlice2D(matrix)
+	return matrix
 }
 
-func Logic2Pola6 (n int) {
+func Logic2Pola6(n int) [][]int {
 	matrix := DynamicSlice(n, n)
 
-	num := 1	
+	num := 1
 	for i := 0; i < n; i++ {
 		for j := 0; j < n; j++ {
-			if i % 2 == 0 {
+			if i%2 == 0 {
 				matrix[i][j] = num
 				num += 3
 			} else {
@@ -103,10 +98,10 @@ func Logic2Pola6 (n int) {
 			}
 		}
 	}
-	printer.PrintSlice2D(matrix)
+	return matrix
 }
 
-func Logic2Pola7 (n int) {
+func Logic2Pola7(n int) [][]int {
 	matrix := DynamicSlice(n, n)
 
 	num := 1
@@ -119,85 +114,37 @@ func Logic2Pola7 (n int) {
 			}
 		}
 	}
-	printer.PrintSlice2D(matrix)
+	return matrix
 }
 
-func Logic2Pola8(n int) {
+func Logic2Pola8(n int) [][]int {
 	matrix := DynamicSlice(n, n)
 
 	num := 1
 
 	for i := 0; i < n; i++ {
 		for j := 0; j < n; j++ {
-			if i + j == n - 1 {
+			if i+j == n-1 {
 				matrix[j][i] = num
 				num += 2
 			}
 		}
 	}
-	printer.PrintSlice2D(matrix)
+	return matrix
 }
 
-func Logic2Pola9(n int) {
+func Logic2Pola9(n int) [][]int {
 	matrix := DynamicSlice(n, n)
 
 	num := 1
 
 	for i := 0; i < n; i++ {
 		for j := 0; j < n; j++ {
-			if (i == j || i + j == n - 1) {
+			if i == j || i+j == n-1 {
 				matrix[j][i] = num
 			}
 		}
 		num += 2
 	}
-	printer.PrintSlice2D(matrix)		
-}
-
-func Logic2Pola10(n int) {
-	matrix := DynamicSlice(n, n)
-
-	num := 1
-
-	for i := 0; i < n; i++ {
-		for j := 0; j < n; j++ {
-			if j >= i {
-				matrix[j][i] = num
-			}
-		}
-		num += 2
-	}
-	printer.PrintSlice2D(matrix)
-}
-
-func Logic2Pola11(n int) {
-	matrix := DynamicSlice(n, n)
-
-	num := 1
-
-	for i := 0; i < n; i++ {
-		for j := 0; j < n; j++ {
-			if i >= j {
-				matrix[j][i] = num
-			}
-		}
-		num += 2
-	}
-	printer.PrintSlice2D(matrix)
-}
-
-func Logic2Pola12(n int) {
-	matrix := DynamicSlice(n, n)
-
-	num := 1
-
-	for i := 0; i < n; i++ {
-		for j := 0; j < n; j++ {
-			if (i <= j && (i+j) <= (n-1)) || (i >= j && (i+j) >= (n-1)) {
-				matrix[j][i] = num
-			}
-		}
-		num += 2
-	}
-	printer.PrintSlice2D(matrix)
+	return matrix
 }
