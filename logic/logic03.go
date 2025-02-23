@@ -1,10 +1,6 @@
 package logic
 
-import (
-	printer "github.com/achmad-aditiansah/slice-printer"
-)
-
-func Logic3Pola1 (n int) {
+func Logic3Pola1 (n int) [][]int{
 	matrix := DynamicSlice(n, n)
 
 	num := 1
@@ -17,10 +13,10 @@ func Logic3Pola1 (n int) {
 			num += 2
 		}
 	}
-	printer.PrintSlice2D(matrix)
+	return matrix
 }
 
-func Logic3Pola2 (n int) {
+func Logic3Pola2 (n int) [][]int{
 	matrix := DynamicSlice(n, n)
 
 	num := 1
@@ -33,5 +29,5 @@ func Logic3Pola2 (n int) {
 			num += 2
 		}
 	}
-	printer.PrintSlice2D(matrix)
+	return matrix
 }
